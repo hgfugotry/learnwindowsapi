@@ -1032,7 +1032,7 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PSTR szCmdLine,in
     return 0;
 }
 </code></pre>
-<p id="pragma-line-11"><strong>Windows.h</strong>包含了若干Windows头文件.下面是几个最重要也是最基本的头文件:</p>
+<p id="pragma-line-11"><strong>Windows.h</strong>包含了若干Windows头文件.下面是几个Windows.h包含的最重要的头文件:</p>
 <blockquote id="pragma-line-13">
 <p id="pragma-line-13"><em>windef.h</em> 基本数据类型定义</p>
 </blockquote>
@@ -1049,11 +1049,11 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PSTR szCmdLine,in
 <p id="pragma-line-21"><em>wingdi.h</em> 图形设备接口函数</p>
 </blockquote>
 <p id="pragma-line-23">Windows程序的入口是<strong>WinMain</strong>,WinMain总是这样出现:<code>int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PSTR szCmdLine,int iCmdShow)</code>.</p>
-<p id="pragma-line-25">Windows API采用"匈牙利标记法",变量名前使用短前缀表示数据类型.前缀i--int,sz--"以0结尾的字符串"(String Terminated with a Zero)</p>
+<p id="pragma-line-25">Windows API采用"匈牙利标记法",变量名前使用短前缀表示数据类型.前缀i--int,sz--以0结尾的字符串</p>
 <p id="pragma-line-27">在windef.h中:</p>
 <pre><code class="language-c" id="pragma-line-29">#define WINAPI __stdcall
 </code></pre>
-<p id="pragma-line-33">Windows API的函数调用规则是stdcall.函数的参数传递一般通过堆栈进行.stdcall调用规则用x86汇编语言表示如下:</p>
+<p id="pragma-line-33">Windows API的函数调用规则是<strong>stdcall</strong>.函数的参数传递一般通过堆栈进行.stdcall调用规则用x86汇编语言表示如下:</p>
 <pre><code class="language-shell" id="pragma-line-35">push 最右侧参数
 push 右2
 ...
@@ -1067,7 +1067,7 @@ pop ...
 pop ...
 ...
 </code></pre>
-<p id="pragma-line-50">与此类似,C函数的调用规则是cdecl,即:</p>
+<p id="pragma-line-50">与此类似,C函数的调用规则是<strong>cdecl</strong>,即:</p>
 <pre><code class="language-shell" id="pragma-line-52">push 最右侧参数
 push 右2
 ...
@@ -1080,22 +1080,18 @@ pop ...
 子程序:
 ...
 </code></pre>
-<p id="pragma-line-66">还有一些其他的调用方式,如pascal.</p>
+<p id="pragma-line-66">还有一些其他的调用方式,如<strong>pascal</strong>.</p>
 <p id="pragma-line-68">如果想要在C/C++中调用Windows API函数,应将函数的调用方式声明为<code>__stdcall</code>.所以WinMain才长成这个样子:<code>int WINAPI WinMain(参数...)</code>.</p>
-<p id="pragma-line-70">下面来看WinMain的函数原型(在winbase.h中):</p>
+<p id="pragma-line-70">下面来看<strong>WinMain</strong>的函数原型(在winbase.h中):</p>
 <pre><code class="language-c" id="pragma-line-72">int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nShowCmd);
 </code></pre>
 <p id="pragma-line-76">原型的参数与程序中的参数稍有不同.第三个参数在定义中类型为LPSTR,程序中却变成了PSTR.前缀LP代表长指针,是16位Windows的历史遗留.</p>
-<p id="pragma-line-78">第一个参数叫作"实例句柄",句柄可以理解为一个指针,标识了这个程序.</p>
-<p id="pragma-line-80">第二个参数在32位Windows中已不再使用,通常总是NULL.</p>
-<p id="pragma-line-82">第三个参数:用来运行程序的命令行.</p>
-<p id="pragma-line-84">第四个参数:指明程序最初如何显示(最大化,正常显示,最小化).</p>
-<p id="pragma-line-86">MessageBox函数:</p>
-<p id="pragma-line-88">用来显示短信息.</p>
-<p id="pragma-line-90">第一个参数:一个窗口句柄.第二个参数:信息框中的文本字符串.第三个参数:标题栏上的文本字符串.第四个参数:MB_打头的一些常量的组合.</p>
-<p id="pragma-line-92">TEXT是一个宏,使用TEXT宏在把程序转换为Unicode时会方便很多.</p>
-<p id="pragma-line-94">在winuser.h中:</p>
-<pre><code class="language-c" id="pragma-line-96">#define MB_OK                       0x00000000L
+<p id="pragma-line-78">第一个参数叫作"实例句柄",句柄可以理解为一个指针,标识了这个程序.第二个参数在32位Windows中已不再使用,通常总是NULL.第三个参数:用来运行程序的命令行.第四个参数:指明程序最初如何显示(最大化,正常显示,最小化).</p>
+<p id="pragma-line-80"><strong>MessageBox函数</strong>:用来显示短信息.</p>
+<p id="pragma-line-82">第一个参数:一个窗口句柄.第二个参数:信息框中的文本字符串.第三个参数:标题栏上的文本字符串.第四个参数:MB_打头的一些常量的组合.</p>
+<p id="pragma-line-84">TEXT是一个宏,使用TEXT宏在把程序转换为Unicode时会方便很多.</p>
+<p id="pragma-line-86">在winuser.h中定义了一些宏:</p>
+<pre><code class="language-c" id="pragma-line-88">#define MB_OK                       0x00000000L
 #define MB_OKCANCEL                 0x00000001L
 #define MB_ABORTRETRYIGNORE         0x00000002L
 #define MB_YESNOCANCEL              0x00000003L
@@ -1160,13 +1156,13 @@ pop ...
 #define MB_MODEMASK                 0x00003000L
 #define MB_MISCMASK                 0x0000C000L
 </code></pre>
-<p id="pragma-line-163">MessageBox的第四个参数传入0(MB_OK):</p>
-<p id="pragma-line-165"><img alt="Error:图片无法显示" src="1/1.jpg"></p>
-<p id="pragma-line-167">按下"确定"返回值为IDOK.返回值还可能是ISYES,ISNO,IDCANCEL,IDABORT,IDRETRY,IDIGNORE.</p>
-<p id="pragma-line-169">MessageBox的第四个参数传入MB_ICONHAND:</p>
-<p id="pragma-line-171"><img alt="" src="1/2.jpg"></p>
-<p id="pragma-line-173">MessageBox的第四个参数传入MB_OKCANCEL|MB_ICONHAND:</p>
-<p id="pragma-line-175"><img alt="" src="1/3.jpg"></p>
+<p id="pragma-line-155">MessageBox的第四个参数传入0(MB_OK):</p>
+<p id="pragma-line-157"><img alt="Error:图片无法显示" src="1/1.jpg"></p>
+<p id="pragma-line-159">按下"确定"返回值为IDOK.返回值还可能是ISYES,ISNO,IDCANCEL,IDABORT,IDRETRY,IDIGNORE.</p>
+<p id="pragma-line-161">MessageBox的第四个参数传入MB_ICONHAND:</p>
+<p id="pragma-line-163"><img alt="" src="1/2.jpg"></p>
+<p id="pragma-line-165">MessageBox的第四个参数传入MB_OKCANCEL|MB_ICONHAND:</p>
+<p id="pragma-line-167"><img alt="" src="1/3.jpg"></p>
 </div>
     <script>
         /*! @license DOMPurify 3.0.3 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/3.0.3/LICENSE */
