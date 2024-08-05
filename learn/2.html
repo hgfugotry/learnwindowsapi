@@ -1024,217 +1024,156 @@
     <meta http-equiv="cache-control" content="no-cache">
 </head>
 <body>
-    <div id="___markdown-content___" class="markdown-body"><h1 id="windows-api-helloworld"><a id="pragma-line-0"></a>学习Windows API--从一个HelloWorld程序开始</h1>
-<pre><code class="language-c" id="pragma-line-2">#include&lt;Windows.h&gt;
-int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PSTR szCmdLine,int iCmdShow)
+    <div id="___markdown-content___" class="markdown-body"><h1 id="section"><a id="pragma-line-0"></a>字符串</h1>
+<p id="pragma-line-2">在C语言中,可以这样定义一个ASCII字符串:</p>
+<pre><code class="language-c" id="pragma-line-4">char* str="Hello,World!";
+char str[]="Hello,World!";
+char str[13]={'H','e','l','l','o',',','W','o','r','l','d','!','\0'};
+</code></pre>
+<p id="pragma-line-10">对于宽字符,有如下<code>typedef</code>:</p>
+<pre><code class="language-c" id="pragma-line-12">typedef unsigned short wchar_t;
+</code></pre>
+<p id="pragma-line-16">可以这样定义一个宽字符串:</p>
+<pre><code class="language-c" id="pragma-line-18">wchar_t ch=L'L'                    //告诉编译器是一个宽字符
+wchar_t* str=L"Hello,World!";
+wchar_t str[]=L"Hello,World!";
+</code></pre>
+<p id="pragma-line-24">编写一个简单的程序:</p>
+<pre><code class="language-c" id="pragma-line-26">#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
+int main(void)
 {
-    MessageBox(NULL,TEXT("Hello,Windows API!),TEXT("Hellomsg"),0);
+    char str0[] = "Hello,World!";
+    wchar_t str1[] = L"Hello,World!";
+    printf("strlen(str0) is %zd.\n", strlen(str0));
+    printf("strlen(str1) is %zd.\n", strlen(str1));
     return 0;
 }
 </code></pre>
-<p id="pragma-line-11"><strong>Windows.h</strong>包含了若干Windows头文件.下面是几个Windows.h包含的最重要的头文件:</p>
-<blockquote id="pragma-line-13">
-<p id="pragma-line-13"><em>windef.h</em> 基本数据类型定义</p>
-</blockquote>
-<blockquote id="pragma-line-15">
-<p id="pragma-line-15"><em>winnt.h</em> 支持Unicode的类型定义</p>
-</blockquote>
-<blockquote id="pragma-line-17">
-<p id="pragma-line-17"><em>winbase.h</em> 内核函数</p>
-</blockquote>
-<blockquote id="pragma-line-19">
-<p id="pragma-line-19"><em>winuser.h</em> 用户界面函数</p>
-</blockquote>
-<blockquote id="pragma-line-21">
-<p id="pragma-line-21"><em>wingdi.h</em> 图形设备接口函数</p>
-</blockquote>
-<p id="pragma-line-23">Windows程序的入口是<strong>WinMain</strong>,WinMain总是这样出现:<code>int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PSTR szCmdLine,int iCmdShow)</code>.</p>
-<p id="pragma-line-25">Windows API采用"<strong>匈牙利标记法</strong>",变量名前使用短前缀表示数据类型.</p>
-<table id="pragma-line-27">
-<thead>
-<tr id="pragma-line-27">
-<th id="pragma-line-27">前缀</th>
-<th id="pragma-line-27">数据类型</th>
-</tr>
-</thead>
-<tbody>
-<tr id="pragma-line-29">
-<td id="pragma-line-29">c</td>
-<td id="pragma-line-29">char/WCHAR/TCHAR</td>
-</tr>
-<tr id="pragma-line-30">
-<td id="pragma-line-30">by</td>
-<td id="pragma-line-30">BYTE(无符号字符)</td>
-</tr>
-<tr id="pragma-line-31">
-<td id="pragma-line-31">n</td>
-<td id="pragma-line-31">short</td>
-</tr>
-<tr id="pragma-line-32">
-<td id="pragma-line-32">i</td>
-<td id="pragma-line-32">int</td>
-</tr>
-<tr id="pragma-line-33">
-<td id="pragma-line-33">x/y</td>
-<td id="pragma-line-33">int(表示x坐标和y坐标)</td>
-</tr>
-<tr id="pragma-line-34">
-<td id="pragma-line-34">cx/cy</td>
-<td id="pragma-line-34">int(表示x和y的长度,c表示count)</td>
-</tr>
-<tr id="pragma-line-35">
-<td id="pragma-line-35">B/f</td>
-<td id="pragma-line-35">BOOL(实际是int)/flag</td>
-</tr>
-<tr id="pragma-line-36">
-<td id="pragma-line-36">w</td>
-<td id="pragma-line-36">WORD(字,16位无符号整型)</td>
-</tr>
-<tr id="pragma-line-37">
-<td id="pragma-line-37">dw</td>
-<td id="pragma-line-37">DWORD(双字,32位无符号整型)</td>
-</tr>
-<tr id="pragma-line-38">
-<td id="pragma-line-38">l</td>
-<td id="pragma-line-38">LONG(32位有符号整型)</td>
-</tr>
-<tr id="pragma-line-39">
-<td id="pragma-line-39">fn</td>
-<td id="pragma-line-39">函数</td>
-</tr>
-<tr id="pragma-line-40">
-<td id="pragma-line-40">s</td>
-<td id="pragma-line-40">字符串</td>
-</tr>
-<tr id="pragma-line-41">
-<td id="pragma-line-41">sz</td>
-<td id="pragma-line-41">以0结尾的字符串</td>
-</tr>
-<tr id="pragma-line-42">
-<td id="pragma-line-42">h</td>
-<td id="pragma-line-42">句柄(handle)</td>
-</tr>
-<tr id="pragma-line-43">
-<td id="pragma-line-43">p</td>
-<td id="pragma-line-43">指针</td>
-</tr>
-</tbody>
-</table>
-<p id="pragma-line-45">在windef.h中:</p>
-<pre><code class="language-c" id="pragma-line-47">#define WINAPI __stdcall
+<p id="pragma-line-39">程序输出如下:</p>
+<pre><code class="language-shell" id="pragma-line-41">strlen(str0) is 12.
+strlen(str1) is 1.
 </code></pre>
-<p id="pragma-line-51">Windows API的函数调用规则是<strong>stdcall</strong>.函数的参数传递一般通过堆栈进行.stdcall调用规则用x86汇编语言表示如下:</p>
-<pre><code class="language-shell" id="pragma-line-53">push 最右侧参数
-push 右2
-...
-push 最左侧参数
-call 子程序
-...
-子程序:
-...
-pop ...
-pop ...
-pop ...
-...
+<p id="pragma-line-46"><code>strlen()</code>函数遇到宽字符串就无法正常工作了.让我们看一看宽字符串<code>str1</code>的十六进制表示,可以通过以下代码实现:</p>
+<pre><code class="language-c" id="pragma-line-48">char* str = str1;
+for (int i = 0; i &lt; 26; i++)
+    printf("%x ", str[i]);
 </code></pre>
-<p id="pragma-line-68">与此类似,C函数的调用规则是<strong>cdecl</strong>,即:</p>
-<pre><code class="language-shell" id="pragma-line-70">push 最右侧参数
-push 右2
-...
-push 最左侧参数
-call 子程序
-pop ...
-pop ...
-pop ...
-...
-子程序:
-...
+<pre><code class="language-shell" id="pragma-line-54">48 0 65 0 6c 0 6c 0 6f 0 2c 0 57 0 6f 0 72 0 6c 0 64 0 21 0 0 0
 </code></pre>
-<p id="pragma-line-84">还有一些其他的调用方式,如<strong>pascal</strong>.</p>
-<p id="pragma-line-86">如果想要在C/C++中调用Windows API函数,应将函数的调用方式声明为<code>__stdcall</code>.所以WinMain才长成这个样子:<code>int WINAPI WinMain(参数...)</code>.</p>
-<p id="pragma-line-88">下面来看<strong>WinMain</strong>的函数原型(在winbase.h中):</p>
-<pre><code class="language-c" id="pragma-line-90">int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nShowCmd);
+<p id="pragma-line-58">显然,<code>strlen()</code>函数把48后面的0当做字符串的结尾标记了.</p>
+<p id="pragma-line-60"><code>strlen()</code>函数也有对应的宽字符版本:<code>wcslen()</code>.</p>
+<p id="pragma-line-62"><code>wcslen()</code>返回的值是6.还记得上面的<code>typedef</code>吗?<code>wchar_t</code>就是<code>unsigned short</code>,占据2个字节.第一个<code>char</code>是0x48,而第一个<code>wchar_t</code>是0x0048,所以<code>wcslen()</code>才可以正常工作.</p>
+<p id="pragma-line-64">两个版本的字符串显然有点麻烦,我们可以使用Microsoft Visual C++中提供的tchar.h.tchar.h中定义了一系列诸如<code>_tprintf</code>的前面带有下划线的函数.如果程序中定义了<code>_UNICODE</code>,那么</p>
+<pre><code class="language-c" id="pragma-line-66">#define _tcslen wcslen
 </code></pre>
-<p id="pragma-line-94">原型的参数与程序中的参数稍有不同.第三个参数在定义中类型为LPSTR,程序中却变成了PSTR.前缀LP代表长指针,是16位Windows的历史遗留.</p>
-<p id="pragma-line-96">第一个参数叫作"实例句柄",句柄可以理解为一个指针,标识了这个程序.第二个参数在32位Windows中已不再使用,通常总是NULL.第三个参数:用来运行程序的命令行.第四个参数:指明程序最初如何显示(最大化,正常显示,最小化).</p>
-<p id="pragma-line-98"><strong>MessageBox函数</strong>:用来显示短信息.</p>
-<p id="pragma-line-100">第一个参数:一个窗口句柄.第二个参数:信息框中的文本字符串.第三个参数:标题栏上的文本字符串.第四个参数:MB_打头的一些常量的组合.</p>
-<p id="pragma-line-102">TEXT是一个宏,使用TEXT宏在把程序转换为Unicode时会方便很多.</p>
-<p id="pragma-line-104">在winuser.h中定义了一些宏:</p>
-<pre><code class="language-c" id="pragma-line-106">#define MB_OK                       0x00000000L
-#define MB_OKCANCEL                 0x00000001L
-#define MB_ABORTRETRYIGNORE         0x00000002L
-#define MB_YESNOCANCEL              0x00000003L
-#define MB_YESNO                    0x00000004L
-#define MB_RETRYCANCEL              0x00000005L
-#if(WINVER &gt;= 0x0500)
-#define MB_CANCELTRYCONTINUE        0x00000006L
-#endif /* WINVER &gt;= 0x0500 */
-
-
-#define MB_ICONHAND                 0x00000010L
-#define MB_ICONQUESTION             0x00000020L
-#define MB_ICONEXCLAMATION          0x00000030L
-#define MB_ICONASTERISK             0x00000040L
-
-#if(WINVER &gt;= 0x0400)
-#define MB_USERICON                 0x00000080L
-#define MB_ICONWARNING              MB_ICONEXCLAMATION
-#define MB_ICONERROR                MB_ICONHAND
-#endif /* WINVER &gt;= 0x0400 */
-
-#define MB_ICONINFORMATION          MB_ICONASTERISK
-#define MB_ICONSTOP                 MB_ICONHAND
-
-#define MB_DEFBUTTON1               0x00000000L
-#define MB_DEFBUTTON2               0x00000100L
-#define MB_DEFBUTTON3               0x00000200L
-#if(WINVER &gt;= 0x0400)
-#define MB_DEFBUTTON4               0x00000300L
-#endif /* WINVER &gt;= 0x0400 */
-
-#define MB_APPLMODAL                0x00000000L
-#define MB_SYSTEMMODAL              0x00001000L
-#define MB_TASKMODAL                0x00002000L
-#if(WINVER &gt;= 0x0400)
-#define MB_HELP                     0x00004000L // Help Button
-#endif /* WINVER &gt;= 0x0400 */
-
-#define MB_NOFOCUS                  0x00008000L
-#define MB_SETFOREGROUND            0x00010000L
-#define MB_DEFAULT_DESKTOP_ONLY     0x00020000L
-
-#if(WINVER &gt;= 0x0400)
-#define MB_TOPMOST                  0x00040000L
-#define MB_RIGHT                    0x00080000L
-#define MB_RTLREADING               0x00100000L
-
-#endif /* WINVER &gt;= 0x0400 */
-
-#ifdef _WIN32_WINNT
-#if (_WIN32_WINNT &gt;= 0x0400)
-#define MB_SERVICE_NOTIFICATION          0x00200000L
+<p id="pragma-line-70">如果没有定义则:</p>
+<pre><code class="language-c" id="pragma-line-72">#define _tcslen strlen
+</code></pre>
+<p id="pragma-line-76">查看winnt.h头文件,前面提到的<code>TEXT()</code>宏定义结构大致如下:</p>
+<pre><code class="language-c" id="pragma-line-78">#ifdef UNICODE
+#define __T(quote) L##quote
 #else
-#define MB_SERVICE_NOTIFICATION          0x00040000L
+#define __T(quote) quote
 #endif
-#define MB_SERVICE_NOTIFICATION_NT3X     0x00040000L
-#endif
-
-#define MB_TYPEMASK                 0x0000000FL
-#define MB_ICONMASK                 0x000000F0L
-#define MB_DEFMASK                  0x00000F00L
-#define MB_MODEMASK                 0x00003000L
-#define MB_MISCMASK                 0x0000C000L
+#define TEXT(quote) __T(quote)
 </code></pre>
-<p id="pragma-line-173">MessageBox的第四个参数传入0(MB_OK):</p>
-<p id="pragma-line-175"><img alt="Error:图片无法显示" src="1/1.jpg"></p>
-<p id="pragma-line-177">按下"确定"返回值为IDOK.返回值还可能是ISYES,ISNO,IDCANCEL,IDABORT,IDRETRY,IDIGNORE.</p>
-<p id="pragma-line-179">MessageBox的第四个参数传入MB_ICONHAND:</p>
-<p id="pragma-line-181"><img alt="" src="1/2.jpg"></p>
-<p id="pragma-line-183">MessageBox的第四个参数传入MB_OKCANCEL|MB_ICONHAND:</p>
-<p id="pragma-line-185"><img alt="" src="1/3.jpg"></p>
-<p id="pragma-line-187">2024.8.3</p>
-<p id="pragma-line-189">2024.8.4修改</p>
+<p id="pragma-line-87">其中,##将L和宏参数quote拼接在一起.</p>
+<p id="pragma-line-89">在winnt.h中:</p>
+<pre><code class="language-c" id="pragma-line-91">typedef char CHAR;                            //8位字符
+typedef wchar_t WCHAR;                        //16位字符
+typedef CHAR* PCHAR,* LPCH,* PCH,* NPSTR,* LPSTR,* PSTR;//8位字符串
+typedef CONST CHAR* LPCCH,* PCCH,* LPCSTR,* PCSTR;//const8位字符串
+typedef WCHAR* PWCHAR,* LPWCH,* PWCH,* NWPSTR,* LPWSTR,* PWSTR;//16位字符串
+typedef CONST WCHAR* LPCWCH,* PCWCH,* LPCWSTR,* PCWSTR;//const16位字符串
+//前缀N代表Near(近),L代表Long(远),在16位Windows中,分别意味着段内近转移和跨段转移.在32位Windows中,只有FLAT一种寻址模式,N和L没有区别.
+</code></pre>
+<pre><code class="language-c" id="pragma-line-101">#ifdef UNICODE
+//如果定义了UNICODE,则TCHAR和指向TCHAR的指针分别被定义为WCHAR和指向WCHAR的指针
+typedef WCHAR TCHAR,* PTCHAR;
+typedef LPWSTR LPTCH,PTCH,PTSTR,LPTSTR;
+typedef LPCWSTR LPCTSTR;
+#else
+//分别被定义为char和指向char的指针
+typedef char TCHAR,* PTCHAR;
+typedef LPSTR LPTCH,PTCH,PTSTR,LPTSTR;
+typedef LPCSTR LPCTSTR;
+#endif
+</code></pre>
+<p id="pragma-line-115">这些定义能让你只编写一份源代码就能分别编译为使用两种字符集的程序.</p>
+<p id="pragma-line-117">看<code>MessageBox()</code>的定义:</p>
+<pre><code class="language-c" id="pragma-line-119">WINUSERAPI int WINAPI MessageBoxA(HWND hWnd,LPCSTR lpText,LPCSTR lpCaption,UINT utype);
+WINUSERAPI int WINAPI MessageBoxW(HWND hWnd,LPCWSTR lpText,LPCWSTR lpCaption,UINT utype);
+#ifdef UNICODE
+#define MessageBox MessageBoxW
+#else
+#define MessageBox MessageBoxA
+#endif
+</code></pre>
+<p id="pragma-line-129">其中,A代表ASCII,W代表宽字符.如果定义了UNICODE,那么MessageBox将是宽字符版本,否则就是窄字符版本.</p>
+<p id="pragma-line-131">下面看Windows提供的一些字符串函数:</p>
+<pre><code class="language-c" id="pragma-line-133">lstrlen(str);
+lstrlen(str1,str2);
+lstrcpyn(str1,str2,count);
+lstrcat(str1,str2);
+lstrcmp(str1,str2);
+lstrcmpi(str1,str2);
+</code></pre>
+<p id="pragma-line-142">这些函数与C中的字符串函数有相同的功能,不同的地方是它们根据是否定义UNICODE,选择对应的宽字符版本或窄字符版本.</p>
+<p id="pragma-line-144"><strong>格式化输出</strong></p>
+<p id="pragma-line-146">看下面一段程序:</p>
+<pre><code class="language-c" id="pragma-line-148">#include&lt;Windows.h&gt;
+#include&lt;stdio.h&gt;
+int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,PSTR szCmdLine,int iCmdShow)
+{
+    TCHAR szBuffer[100];
+    wsprintf(szBuffer, L"现在是北京时间%d年%d月%d日%d时%d分%d秒", 2024, 8, 3, 10, 5, 30);
+    MessageBox(NULL, szBuffer, TEXT("Hellomsg"), MB_OKCANCEL);
+    return 0;
+}
+</code></pre>
+<p id="pragma-line-160">程序的输出如下:</p>
+<p id="pragma-line-162"><img alt="" src="2/1.jpg"></p>
+<p id="pragma-line-164">注意:使用<code>sprintf()</code>格式化输出宽字符串需要用到它的宽字符版本:<code>wsprintf()</code>,还要在待格式化的宽字符串前加上<code>L</code>.</p>
+<p id="pragma-line-166"><code>sprintf()</code>很容易导致缓冲区溢出.如果格式字符串中的转换说明数量与被格式化的变量数量不同,还可能会导致程序出错甚至崩溃.Microsoft提供了<code>snprintf()</code>和<code>_snwprintf()</code>函数解决缓冲区问题.<code>_snprintf()</code>中n代表限制长度.</p>
+<p id="pragma-line-168">使用<code>_snwprintf()</code>函数:</p>
+<pre><code class="language-c" id="pragma-line-170">_snwprintf(szBuffer, 100, L"现在是北京时间%d年%d月%d日%d时%d分%d秒", 2024, 8, 3, 10, 5, 30);
+</code></pre>
+<p id="pragma-line-174">多出来的参数传递允许的最大字符数量.</p>
+<p id="pragma-line-176">下面来写一个格式化信息框输出的函数:</p>
+<pre><code class="language-c" id="pragma-line-178">int __cdecl MessageBox_Printf(TCHAR* szCaption, UINT uType, TCHAR* szFormat, ...)
+{
+    va_list(ap);
+    va_start(ap, szFormat);
+    TCHAR buffer[1024];
+#ifdef UNICODE
+    _vsnwprintf_s(buffer, 512, _TRUNCATE, szFormat, ap);
+#else
+    _vsnprintf_s(buffer, 1024, _TRUNCATE, szFormat, ap);
+#endif
+    va_end(ap);
+    return MessageBox(NULL, buffer, szCaption, uType);
+}
+</code></pre>
+<p id="pragma-line-194"><code>vsprintf()</code>函数:</p>
+<pre><code class="language-c" id="pragma-line-196">int vsprintf( char *restrict buffer, const char *restrict format,
+              va_list vlist );
+//buffer    -    指向要写入的字符串的指针
+//format    -    指向指定数据转译方式的空终止字符串的指针
+//vlist    -    包含要打印数据的变量参数列表
+</code></pre>
+<p id="pragma-line-204"><code>_vsnwprintf_s()</code>函数的参数可以通过将光标移至函数标识符上,按下F1跳转至Microsoft官网查看(在Microsoft Visual C++中).</p>
+<p id="pragma-line-206"><img alt="" src="2/2.jpg"></p>
+<p id="pragma-line-208">测试<code>MessageBox_Printf()</code>:</p>
+<pre><code class="language-c" id="pragma-line-210">MessageBox_Printf(TEXT("the screen's size"),
+&nbsp;&nbsp;&nbsp;&nbsp;MB_ABORTRETRYIGNORE,
+&nbsp;&nbsp;&nbsp;&nbsp;TEXT("x %d y %d"),
+&nbsp;&nbsp;&nbsp;&nbsp;GetSystemMetrics(SM_CXSCREEN),
+&nbsp;&nbsp;&nbsp;&nbsp;GetSystemMetrics(SM_CYSCREEN));
+</code></pre>
+<p id="pragma-line-218">输出:</p>
+<p id="pragma-line-220"><img alt="" src="2/3.jpg"></p>
+<p id="pragma-line-222">2024.8.3</p>
 </div>
     <script>
         /*! @license DOMPurify 3.0.3 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/3.0.3/LICENSE */

@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+  @font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1b1f23;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #24292e;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .pl-c {
+  color: #6a737d;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #005cc5;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6f42c1;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #24292e;
+}
+
+.markdown-body .pl-ent {
+  color: #22863a;
+}
+
+.markdown-body .pl-k {
+  color: #d73a49;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #032f62;
+}
+
+.markdown-body .pl-smw,
+.markdown-body .pl-v {
+  color: #e36209;
+}
+
+.markdown-body .pl-bu {
+  color: #b31d28;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b31d28;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2 {
+  background-color: #d73a49;
+  color: #fafbfc;
+}
+
+.markdown-body .pl-c2:before {
+  content: "^M";
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #22863a;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ml {
+  color: #735c0f;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #005cc5;
+  font-weight: 700;
+}
+
+.markdown-body .pl-mi {
+  color: #24292e;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #24292e;
+  font-weight: 700;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffeef0;
+  color: #b31d28;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #f0fff4;
+  color: #22863a;
+}
+
+.markdown-body .pl-mc {
+  background-color: #ffebda;
+  color: #e36209;
+}
+
+.markdown-body .pl-mi2 {
+  background-color: #005cc5;
+  color: #f6f8fa;
+}
+
+.markdown-body .pl-mdr {
+  color: #6f42c1;
+  font-weight: 700;
+}
+
+.markdown-body .pl-ba {
+  color: #586069;
+}
+
+.markdown-body .pl-sg {
+  color: #959da5;
+}
+
+.markdown-body .pl-corl {
+  color: #032f62;
+  text-decoration: underline;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dfe2e5;
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.markdown-body hr:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body hr:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.markdown-body .border {
+  border: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .border-0 {
+  border: 0!important;
+}
+
+.markdown-body .border-bottom {
+  border-bottom: 1px solid #e1e4e8!important;
+}
+
+.markdown-body .rounded-1 {
+  border-radius: 3px!important;
+}
+
+.markdown-body .bg-white {
+  background-color: #fff!important;
+}
+
+.markdown-body .bg-gray-light {
+  background-color: #fafbfc!important;
+}
+
+.markdown-body .text-gray-light {
+  color: #6a737d!important;
+}
+
+.markdown-body .mb-0 {
+  margin-bottom: 0!important;
+}
+
+.markdown-body .my-2 {
+  margin-bottom: 8px!important;
+  margin-top: 8px!important;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .py-0 {
+  padding-bottom: 0!important;
+  padding-top: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .py-2 {
+  padding-bottom: 8px!important;
+  padding-top: 8px!important;
+}
+
+.markdown-body .pl-3,
+.markdown-body .px-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .px-3 {
+  padding-right: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .f6 {
+  font-size: 12px!important;
+}
+
+.markdown-body .lh-condensed {
+  line-height: 1.25!important;
+}
+
+.markdown-body .text-bold {
+  font-weight: 600!important;
+}
+
+.markdown-body:before {
+  content: "";
+  display: table;
+}
+
+.markdown-body:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: .25em;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.markdown-body blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: .3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  color: #6a737d;
+  font-size: .85em;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.markdown-body dl dd {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.markdown-body table {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body img {
+  background-color: #fff;
+  box-sizing: content-box;
+  max-width: 100%;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  background-color: rgba(27,31,35,.05);
+  border-radius: 3px;
+  font-size: 85%;
+  margin: 0;
+  padding: .2em .4em;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  word-break: normal;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  border: 0;
+  display: inline;
+  line-height: inherit;
+  margin: 0;
+  max-width: auto;
+  overflow: visible;
+  padding: 0;
+  word-wrap: normal;
+}
+
+.markdown-body .commit-tease-sha {
+  color: #444d56;
+  display: inline-block;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 90%;
+}
+
+.markdown-body .blob-wrapper {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.markdown-body .blob-wrapper-embedded {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.markdown-body .blob-num {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  color: rgba(27,31,35,.3);
+  cursor: pointer;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  line-height: 20px;
+  min-width: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.markdown-body .blob-num:hover {
+  color: rgba(27,31,35,.6);
+}
+
+.markdown-body .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown-body .blob-code {
+  line-height: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  vertical-align: top;
+}
+
+.markdown-body .blob-code-inner {
+  color: #24292e;
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  font-size: 12px;
+  overflow: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.markdown-body .pl-token.active,
+.markdown-body .pl-token:hover {
+  background: #ffea7f;
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  background-color: #fafbfc;
+  border: 1px solid #d1d5da;
+  border-bottom-color: #c6cbd1;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #c6cbd1;
+  color: #444d56;
+  display: inline-block;
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+.markdown-body :checked+.radio-label {
+  border-color: #0366d6;
+  position: relative;
+  z-index: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="1"] {
+  -moz-tab-size: 1;
+  tab-size: 1;
+}
+
+.markdown-body .tab-size[data-tab-size="2"] {
+  -moz-tab-size: 2;
+  tab-size: 2;
+}
+
+.markdown-body .tab-size[data-tab-size="3"] {
+  -moz-tab-size: 3;
+  tab-size: 3;
+}
+
+.markdown-body .tab-size[data-tab-size="4"] {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+.markdown-body .tab-size[data-tab-size="5"] {
+  -moz-tab-size: 5;
+  tab-size: 5;
+}
+
+.markdown-body .tab-size[data-tab-size="6"] {
+  -moz-tab-size: 6;
+  tab-size: 6;
+}
+
+.markdown-body .tab-size[data-tab-size="7"] {
+  -moz-tab-size: 7;
+  tab-size: 7;
+}
+
+.markdown-body .tab-size[data-tab-size="8"] {
+  -moz-tab-size: 8;
+  tab-size: 8;
+}
+
+.markdown-body .tab-size[data-tab-size="9"] {
+  -moz-tab-size: 9;
+  tab-size: 9;
+}
+
+.markdown-body .tab-size[data-tab-size="10"] {
+  -moz-tab-size: 10;
+  tab-size: 10;
+}
+
+.markdown-body .tab-size[data-tab-size="11"] {
+  -moz-tab-size: 11;
+  tab-size: 11;
+}
+
+.markdown-body .tab-size[data-tab-size="12"] {
+  -moz-tab-size: 12;
+  tab-size: 12;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body hr {
+  border-bottom-color: #eee;
+}
+
+.markdown-body .pl-0 {
+  padding-left: 0!important;
+}
+
+.markdown-body .pl-1 {
+  padding-left: 4px!important;
+}
+
+.markdown-body .pl-2 {
+  padding-left: 8px!important;
+}
+
+.markdown-body .pl-3 {
+  padding-left: 16px!important;
+}
+
+.markdown-body .pl-4 {
+  padding-left: 24px!important;
+}
+
+.markdown-body .pl-5 {
+  padding-left: 32px!important;
+}
+
+.markdown-body .pl-6 {
+  padding-left: 40px!important;
+}
+
+.markdown-body .pl-7 {
+  padding-left: 48px!important;
+}
+
+.markdown-body .pl-8 {
+  padding-left: 64px!important;
+}
+
+.markdown-body .pl-9 {
+  padding-left: 80px!important;
+}
+
+.markdown-body .pl-10 {
+  padding-left: 96px!important;
+}
+
+.markdown-body .pl-11 {
+  padding-left: 112px!important;
+}
+
+.markdown-body .pl-12 {
+  padding-left: 128px!important;
+}
+
+/*# sourceURL=webpack://./node_modules/github-markdown-css/github-markdown.css */
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL25vZGVfbW9kdWxlcy9naXRodWItbWFya2Rvd24tY3NzL2dpdGh1Yi1tYXJrZG93bi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSwwQkFBMEI7RUFDMUIsMkRBQXF0RTtBQUN2dEU7O0FBRUE7RUFDRSxxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLDJCQUEyQjtBQUM3Qjs7QUFFQTtFQUNFLFdBQVc7RUFDWCxjQUFjO0VBQ2Qsa0JBQWtCO0VBQ2xCLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGFBQWE7QUFDZjs7QUFFQTs7Ozs7O0VBTUUsY0FBYztFQUNkLHNCQUFzQjtFQUN0QixrQkFBa0I7QUFDcEI7O0FBRUE7Ozs7OztFQU1FLHFCQUFxQjtBQUN2Qjs7QUFFQTs7Ozs7O0VBTUUsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsMEJBQTBCO0VBQzFCLDhCQUE4QjtFQUM5QixjQUFjO0VBQ2QsZ0JBQWdCO0VBQ2hCLGtJQUFrSTtFQUNsSSxlQUFlO0VBQ2YsZ0JBQWdCO0VBQ2hCLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7O0VBRUUsY0FBYztBQUNoQjs7QUFFQTs7RUFFRSxjQUFjO0FBQ2hCOztBQUVBOztFQUVFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsY0FBYztBQUNoQjs7QUFFQTs7Ozs7OztFQU9FLGNBQWM7QUFDaEI7O0FBRUE7O0VBRUUsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSx5QkFBeUI7RUFDekIsY0FBYztBQUNoQjs7QUFFQTtFQUNFLHlCQUF5QjtFQUN6QixjQUFjO0FBQ2hCOztBQUVBO0VBQ0UsYUFBYTtBQUNmOztBQUVBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7OztFQUdFLGNBQWM7RUFDZCxnQkFBZ0I7QUFDbEI7O0FBRUE7RUFD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 */
+  </style>
+  <style>
+  /**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #9a6e3a;
+	/* This background color was intended by the author of this theme. */
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function,
+.token.class-name {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+/*# sourceURL=webpack://./node_modules/prismjs/themes/prism.css */
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL25vZGVfbW9kdWxlcy9wcmlzbWpzL3RoZW1lcy9wcmlzbS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7RUFJRTs7QUFFRjs7Q0FFQyxZQUFZO0NBQ1osZ0JBQWdCO0NBQ2hCLHdCQUF3QjtDQUN4QixzRUFBc0U7Q0FDdEUsY0FBYztDQUNkLGdCQUFnQjtDQUNoQixnQkFBZ0I7Q0FDaEIsb0JBQW9CO0NBQ3BCLGtCQUFrQjtDQUNsQixpQkFBaUI7Q0FDakIsZ0JBQWdCOztDQUVoQixnQkFBZ0I7Q0FDaEIsY0FBYztDQUNkLFdBQVc7O0NBRVgscUJBQXFCO0NBQ3JCLGtCQUFrQjtDQUNsQixpQkFBaUI7Q0FDakIsYUFBYTtBQUNkOztBQUVBOztDQUVDLGlCQUFpQjtDQUNqQixtQkFBbUI7QUFDcEI7O0FBRUE7O0NBRUMsaUJBQWlCO0NBQ2pCLG1CQUFtQjtBQUNwQjs7QUFFQTtDQUNDOztFQUVDLGlCQUFpQjtDQUNsQjtBQUNEOztBQUVBLGdCQUFnQjtBQUNoQjtDQUNDLFlBQVk7Q0FDWixjQUFjO0NBQ2QsY0FBYztBQUNmOztBQUVBOztDQUVDLG1CQUFtQjtBQUNwQjs7QUFFQSxnQkFBZ0I7QUFDaEI7Q0FDQyxhQUFhO0NBQ2IsbUJBQW1CO0NBQ25CLG1CQUFtQjtBQUNwQjs7QUFFQTs7OztDQUlDLGdCQUFnQjtBQUNqQjs7QUFFQTtDQUNDLFdBQVc7QUFDWjs7QUFFQTtDQUNDLFdBQVc7QUFDWjs7QUFFQTs7Ozs7OztDQU9DLFdBQVc7QUFDWjs7QUFFQTs7Ozs7O0NBTUMsV0FBVztBQUNaOztBQUVBOzs7OztDQUtDLGNBQWM7Q0FDZCxvRUFBb0U7Q0FDcEUsaUNBQWlDO0FBQ2xDOztBQUVBOzs7Q0FHQyxXQUFXO0FBQ1o7O0FBRUE7O0NBRUMsY0FBYztBQUNmOztBQUVBOzs7Q0FHQyxXQUFXO0FBQ1o7O0FBRUE7O0NBRUMsaUJBQWlCO0FBQ2xCO0FBQ0E7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxZQUFZO0FBQ2IiLCJzb3VyY2VSb290IjoiIn0= */
+  </style>
+  <style>
+  
+  </style>
+  <style>
+    .markdown-body {
+      font-family: -apple-system,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+      box-sizing: border-box;
+      min-width: 200px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 45px;
+    }
+
+    @media not print {
+      .markdown-body {
+        padding: 45px;
+      }
+
+      @media (max-width: 767px) {
+        .markdown-body {
+          padding: 15px;
+        }
+      }
+    }
+
+    .hf-container {
+      color: #24292e;
+      line-height: 1.3;
+    }
+
+    .markdown-body .highlight pre,
+    .markdown-body pre {
+      white-space: pre-wrap;
+    }
+    .markdown-body table {
+      display: table;
+    }
+    .markdown-body img[data-align="center"] {
+      display: block;
+      margin: 0 auto;
+    }
+    .markdown-body img[data-align="right"] {
+      display: block;
+      margin: 0 0 0 auto;
+    }
+    .markdown-body li.task-list-item {
+      list-style-type: none;
+    }
+    .markdown-body li > [type=checkbox] {
+      margin: 0 0 0 -1.3em;
+    }
+    .markdown-body input[type="checkbox"] ~ p {
+      margin-top: 0;
+      display: inline-block;
+    }
+    .markdown-body ol ol,
+    .markdown-body ul ol {
+      list-style-type: decimal;
+    }
+    .markdown-body ol ol ol,
+    .markdown-body ol ul ol,
+    .markdown-body ul ol ol,
+    .markdown-body ul ul ol {
+      list-style-type: decimal;
+    }
+  </style>
+  <style>.markdown-body a.footnote-ref {
+  text-decoration: none;
+}
+
+.footnotes {
+  font-size: .85em;
+  opacity: .8;
+}
+
+.footnotes li[role="doc-endnote"] {
+  position: relative;
+}
+
+.footnotes .footnote-back {
+  position: absolute;
+  font-family: initial;
+  top: .2em;
+  right: 1em;
+  text-decoration: none;
+}
+
+.inline-math.invalid,
+.multiple-math.invalid {
+  color: rgb(255, 105, 105);
+}
+
+.toc-container {
+  width: 100%;
+}
+
+.toc-container .toc-title {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.toc-container li,
+.toc-container ul,
+.toc-container ul li {
+  list-style: none !important;
+}
+
+.toc-container > ul {
+  padding-left: 0;
+}
+
+.toc-container ul li span {
+  display : flex;
+}
+
+.toc-container ul li span a {
+  color: inherit;
+  text-decoration: none;
+}
+.toc-container ul li span a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.toc-container ul li span span.dots {
+  flex: 1;
+  height: 0.65em;
+  margin: 0 10px;
+  border-bottom: 2px dotted black;
+}
+
+/*# sourceURL=webpack://./src/muya/lib/assets/styles/exportStyle.css */
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9tdXlhL2xpYi9hc3NldHMvc3R5bGVzL2V4cG9ydFN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHFCQUFxQjtBQUN2Qjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxrQkFBa0I7QUFDcEI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsb0JBQW9CO0VBQ3BCLFNBQVM7RUFDVCxVQUFVO0VBQ1YscUJBQXFCO0FBQ3ZCOztBQUVBOztFQUVFLHlCQUF5QjtBQUMzQjs7QUFFQTtFQUNFLFdBQVc7QUFDYjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixnQkFBZ0I7RUFDaEIsZ0JBQWdCO0FBQ2xCOztBQUVBOzs7RUFHRSwyQkFBMkI7QUFDN0I7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCOztBQUVBO0VBQ0UsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxxQkFBcUI7QUFDdkI7QUFDQTtFQUNFLGNBQWM7RUFDZCxxQkFBcUI7QUFDdkI7O0FBRUE7RUFDRSxPQUFPO0VBQ1AsY0FBYztFQUNkLGNBQWM7RUFDZCwrQkFBK0I7QUFDakMiLCJzb3VyY2VSb290IjoiIn0= */</style>
+  <style>.hf-container{font-family:"等线 Light","Open Sans","Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";}.markdown-body{font-family:"等线 Light","Open Sans","Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";font-size:15px;line-height:1.3;}pre.front-matter{display:none!important;}</style>
+</head>
+<body>
+  <article class="markdown-body"><h1 class="atx" id="窗口和消息">窗口和消息</h1>
+<h3 class="atx" id="创建一个窗口">创建一个窗口</h3>
+<p>每个<strong>窗口</strong>(window)都是一个<strong>对象</strong>,可以通过键盘或鼠标进行交互.用户对窗口的输入以<strong>消息</strong>的形式传递给窗口,窗口也通过消息与其他窗口进行通信.</p>
+<p>当用户与窗口交互时,Windows向应用程序传递消息.应用程序创建的每一个窗口都有一个与之相关联的<strong>窗口过程</strong>.Windows调用该窗口过程向窗口传递消息.窗口过程依据这些消息做出相应的处理,然后将控制权返还给Windows.</p>
+<p>窗口是根据<strong>窗口类</strong>创建的.窗口类标识了用于处理传递给窗口的消息的窗口过程.允许多个窗口共享同一窗口类,所以多个窗口可以使用同一窗口过程.窗口类定义了窗口的一般特征.</p>
+<p>在OOP中,<strong>对象</strong>由<strong>数据</strong>和<strong>代码</strong>组成.每个窗口都是一个对象.窗口的代码对应窗口过程,窗口的数据则对应窗口过程所保留的信息以及Windows为每个窗口和存在于系统中的窗口类所保留的信息.</p>
+<p>窗口过程用于处理传递给窗口的消息.通常,这些消息用于将用户的鼠标或键盘输入通知给窗口.如鼠标点击和拖动窗口.</p>
+<p>当Windows程序开始执行时,Windows首先为该程序创建一个<strong>消息队列</strong>(message queue).它存放应用程序可能创建的所有窗口的消息.Windows程序中一般都包含一小段称为<strong>消息循环</strong>(message loop)的代码,用于从消息队列中检索消息,并将其分发给相应的窗口过程.其他消息则不经过消息队列直接发送给窗口过程.</p>
+<h3 class="atx" id="第一个窗口程序">第一个窗口程序</h3>
+<pre><code class="fenced-code-block language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;windows.h&gt;</span></span>
+LRESULT CALLBACK <span class="token function">WndProc</span><span class="token punctuation">(</span>HWND hwnd<span class="token punctuation">,</span> UINT message<span class="token punctuation">,</span> WPARAM wParam<span class="token punctuation">,</span> LPARAM lParam<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//CALLBACK被定义为__stdcall</span>
+
+<span class="token keyword">int</span> __stdcall <span class="token function">WinMain</span><span class="token punctuation">(</span>HINSTANCE hInstance<span class="token punctuation">,</span> HINSTANCE hPrevInstance<span class="token punctuation">,</span> PSTR szCmdLine<span class="token punctuation">,</span> <span class="token keyword">int</span> iCmdShow<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">static</span> TCHAR    szAppName<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">TEXT</span><span class="token punctuation">(</span><span class="token string">"Hello,Windows API!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    HWND            hWnd<span class="token punctuation">;</span>
+    MSG                msg<span class="token punctuation">;</span>
+    WNDCLASS        wndclass<span class="token punctuation">;</span>
+
+    wndclass<span class="token punctuation">.</span>style <span class="token operator">=</span> CS_HREDRAW <span class="token operator">|</span> CS_VREDRAW<span class="token punctuation">;</span>
+    wndclass<span class="token punctuation">.</span>lpfnWndProc <span class="token operator">=</span> WndProc<span class="token punctuation">;</span>
+    wndclass<span class="token punctuation">.</span>cbClsExtra <span class="token operator">=</span> wndclass<span class="token punctuation">.</span>cbWndExtra <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    wndclass<span class="token punctuation">.</span>hInstance <span class="token operator">=</span> hInstance<span class="token punctuation">;</span>
+    wndclass<span class="token punctuation">.</span>hIcon <span class="token operator">=</span> <span class="token function">LoadImage</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">,</span> IDI_APPLICATION<span class="token punctuation">,</span> IMAGE_ICON<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> LR_DEFAULTSIZE<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//LoadImage 加载图标以供程序使用 参阅 https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-loadimagea</span>
+    wndclass<span class="token punctuation">.</span>hCursor <span class="token operator">=</span> <span class="token function">LoadImage</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">,</span> IDC_ARROW<span class="token punctuation">,</span> IMAGE_CURSOR<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> LR_DEFAULTSIZE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    wndclass<span class="token punctuation">.</span>hbrBackground <span class="token operator">=</span> <span class="token punctuation">(</span>HBRUSH<span class="token punctuation">)</span><span class="token function">GetStockObject</span><span class="token punctuation">(</span>WHITE_BRUSH<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//GetStockObject 获取一个图形对象 在这里用于对窗口的背景进行重绘 参阅 https://learn.microsoft.com/zh-cn/windows/win32/api/wingdi/nf-wingdi-setdcbrushcolor</span>
+    wndclass<span class="token punctuation">.</span>lpszMenuName <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    wndclass<span class="token punctuation">.</span>lpszClassName <span class="token operator">=</span> szAppName<span class="token punctuation">;</span>
+
+    <span class="token function">RegisterClass</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>wndclass<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//RegisterClass 注册窗口类</span>
+
+    hWnd <span class="token operator">=</span> <span class="token function">CreateWindow</span><span class="token punctuation">(</span>
+        szAppName<span class="token punctuation">,</span>
+        <span class="token function">TEXT</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        WS_OVERLAPPEDWINDOW<span class="token punctuation">,</span>
+        CW_USEDEFAULT<span class="token punctuation">,</span>
+        CW_USEDEFAULT<span class="token punctuation">,</span>
+        CW_USEDEFAULT<span class="token punctuation">,</span>
+        CW_USEDEFAULT<span class="token punctuation">,</span>
+        <span class="token constant">NULL</span><span class="token punctuation">,</span>
+        <span class="token constant">NULL</span><span class="token punctuation">,</span>
+        hInstance<span class="token punctuation">,</span>
+        <span class="token constant">NULL</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//CreateWindow 创建一个窗口(基于窗口类)</span>
+
+    <span class="token function">ShowWindow</span><span class="token punctuation">(</span>hWnd<span class="token punctuation">,</span> iCmdShow<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//ShowWindow 在屏幕中显示窗口</span>
+    <span class="token function">UpdateWindow</span><span class="token punctuation">(</span>hWnd<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//UpdateWindow 指示窗口对其自身进行重绘</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">GetMessage</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>msg<span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//GetMessage 从消息队列获取消息</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">TranslateMessage</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//TranslateMessage 翻译一些键盘消息</span>
+        <span class="token function">DispatchMessage</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//DispatchMessage 将消息发送给窗口过程</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> msg<span class="token punctuation">.</span>wParam<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+LRESULT CALLBACK <span class="token function">WndProc</span><span class="token punctuation">(</span>HWND hwnd<span class="token punctuation">,</span> UINT message<span class="token punctuation">,</span> WPARAM wParam<span class="token punctuation">,</span> LPARAM lParam<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    HDC hdc<span class="token punctuation">;</span>
+    PAINTSTRUCT ps<span class="token punctuation">;</span>
+    RECT rect<span class="token punctuation">;</span>
+
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> WM_CREATE<span class="token operator">:</span>
+        <span class="token function">PlaySound</span><span class="token punctuation">(</span><span class="token function">TEXT</span><span class="token punctuation">(</span><span class="token string">"something.wav"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> SND_FILENAME <span class="token operator">|</span> SND_ASYNC<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">//PlaySound 播放.wav声音文件</span>
+                                                                        <span class="token comment">//在Microsoft Visual C++中,需要在项目-属性(Alt+F7)-配置属性-链接器-输入-附加依赖项中添加winmm.lib</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> WM_PAINT<span class="token operator">:</span>
+        hdc <span class="token operator">=</span> <span class="token function">BeginPaint</span><span class="token punctuation">(</span>hwnd<span class="token punctuation">,</span> <span class="token operator">&amp;</span>ps<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//BeginPaint 标明窗口绘制开始</span>
+        <span class="token function">GetClientRect</span><span class="token punctuation">(</span>hwnd<span class="token punctuation">,</span> <span class="token operator">&amp;</span>rect<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//GetClientRect 获取窗口客户区的尺寸</span>
+        <span class="token function">DrawText</span><span class="token punctuation">(</span>hdc<span class="token punctuation">,</span> <span class="token function">TEXT</span><span class="token punctuation">(</span><span class="token string">"你好!"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>rect<span class="token punctuation">,</span> DT_SINGLELINE <span class="token operator">|</span> DT_CENTER <span class="token operator">|</span> DT_VCENTER<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//DrawText 显示一个文本字符串</span>
+        <span class="token function">EndPaint</span><span class="token punctuation">(</span>hwnd<span class="token punctuation">,</span> <span class="token operator">&amp;</span>ps<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//EndPaint 结束窗口绘制</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">case</span> WM_DESTROY<span class="token operator">:</span>
+        <span class="token function">PostQuitMessage</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//PostQuitMessage 将退出消息插入消息队列</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">DefWindowProc</span><span class="token punctuation">(</span>hwnd<span class="token punctuation">,</span> message<span class="token punctuation">,</span> wParam<span class="token punctuation">,</span> lParam<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//DefWindowProc 执行默认的消息处理</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//常量标识符前缀</span>
+    <span class="token comment">//CS            类风格选项</span>
+    <span class="token comment">//CW            创建窗口选项</span>
+    <span class="token comment">//DT            文本绘制选项</span>
+    <span class="token comment">//IDI            图标的ID号</span>
+    <span class="token comment">//IDC            光标的ID号</span>
+    <span class="token comment">//MB            消息框选项</span>
+    <span class="token comment">//SND            声音选项</span>
+    <span class="token comment">//WM            窗口消息</span>
+    <span class="token comment">//WS            窗口风格</span>
+
+<span class="token comment">//程序中使用的数据结构</span>
+    <span class="token comment">//MSG            消息结构</span>
+    <span class="token comment">//WNDCLASS        窗口类结构</span>
+    <span class="token comment">//PAINTSTRUCT    绘制结构</span>
+    <span class="token comment">//RECT            矩形结构</span>
+
+<span class="token comment">//句柄</span>
+    <span class="token comment">//HINSTANCE        实例句柄(程序本身)</span>
+    <span class="token comment">//HWND            窗口句柄</span>
+    <span class="token comment">//HDC            设备环境句柄</span>
+    <span class="token comment">//HICON            图标句柄</span>
+    <span class="token comment">//HCURSOR        游标句柄</span>
+    <span class="token comment">//HBRUSH        图形画刷句柄</span></code></pre>
+<h5 class="atx" id="注册窗口类和创建窗口">注册窗口类和创建窗口</h5>
+<p>在创建应用程序窗口之前,必须调用函数<code>RegisterClass()</code>来注册窗口类.<code>RegisterClass()</code>函数的唯一一个参数是一个指向<code>WNDCLASS</code>类型的结构的指针.该结构中包含两个指向字符串的指针(字段),因此,<code>WNDCLASS</code>有窄字符和宽字符版本.</p>
+<p><code>WNDCLASS</code>结构的宽字符版本定义如下:</p>
+<pre><code class="fenced-code-block language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">tagWNDCLASSW</span>
+<span class="token punctuation">{</span>
+    UINT        style<span class="token punctuation">;</span>
+    WNDPROC     lpfnWndProc<span class="token punctuation">;</span><span class="token comment">//前缀lpfn表示"指向函数的长指针",在Win32 API中,长指针和短指针没有区别</span>
+    <span class="token keyword">int</span>         cbClsExtra<span class="token punctuation">;</span><span class="token comment">//前缀cb代表"字节数"(count of byte),常用于表示字节尺寸的变量名称中</span>
+    <span class="token keyword">int</span>         cbWndExtra<span class="token punctuation">;</span>
+    HINSTANCE   hInstance<span class="token punctuation">;</span><span class="token comment">//h:句柄</span>
+    HICON       hIcon<span class="token punctuation">;</span>
+    HCURSOR     hCursor<span class="token punctuation">;</span>
+    HBRUSH      hbrBackground<span class="token punctuation">;</span><span class="token comment">//hbr:画刷的句柄(handle to a brush)</span>
+    LPCWSTR     lpszMenuName<span class="token punctuation">;</span><span class="token comment">//lpsz:指向0结尾字符串的长指针,在WNDCLASS的窄字符版本中此字段为LPCSTR</span>
+    LPCWSTR     lpszClassName<span class="token punctuation">;</span><span class="token comment">//窄字符版本为LPCSTR</span>
+<span class="token punctuation">}</span>
+WNDCLASSW<span class="token punctuation">,</span><span class="token operator">*</span> PWNDCLASSW<span class="token punctuation">,</span>NEAR<span class="token operator">*</span> NPWNDCLASSW<span class="token punctuation">,</span>FAR<span class="token operator">*</span> LPWNDCLASSW<span class="token punctuation">;</span></code></pre>
+<p>在winuser.h中,根据<code>UNICODE</code>标识符是否定义,定义了<code>WNDCLASS</code>结构和指向其的指针.</p>
+<p>下面来依次说明<code>WNDCLASS</code>结构的每个字段.</p>
+<p><code>style</code></p>
+<pre><code class="fenced-code-block language-c">wndclass<span class="token punctuation">.</span>style <span class="token operator">=</span> CS_HREDRAW <span class="token operator">|</span> CS_VERDRAW<span class="token punctuation">;</span></code></pre>
+<p>其中,<code>|</code>是C语言中的按位或运算符.</p>
+<pre><code class="fenced-code-block language-c"><span class="token comment">/*
+ * Class styles
+ */</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CS_VREDRAW</span>          <span class="token expression"><span class="token number">0x0001</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CS_HREDRAW</span>          <span class="token expression"><span class="token number">0x0002</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CS_DBLCLKS</span>          <span class="token expression"><span class="token number">0x0008</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CS_OWNDC</span>            <span class="token expression"><span class="token number">0x0020</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CS_CLASSDC</span>          <span class="token expression"><span class="token number">0x0040</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CS_PARENTDC</span>         <span class="token expression"><span class="token number">0x0080</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CS_NOCLOSE</span>          <span class="token expression"><span class="token number">0x0200</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CS_SAVEBITS</span>         <span class="token expression"><span class="token number">0x0800</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CS_BYTEALIGNCLIENT</span>  <span class="token expression"><span class="token number">0x1000</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CS_BYTEALIGNWINDOW</span>  <span class="token expression"><span class="token number">0x2000</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CS_GLOBALCLASS</span>      <span class="token expression"><span class="token number">0x4000</span></span></span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CS_IME</span>              <span class="token expression"><span class="token number">0x00010000</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">if</span><span class="token expression"><span class="token punctuation">(</span>_WIN32_WINNT <span class="token operator">&gt;=</span> <span class="token number">0x0501</span><span class="token punctuation">)</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">CS_DROPSHADOW</span>       <span class="token expression"><span class="token number">0x00020000</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span> <span class="token comment">/* _WIN32_WINNT &gt;= 0x0501 */</span></span></code></pre>
+<p>以上是WinUser.h中<code>CS_</code>开头的标识符.以这种方式设置的标识符被称为<strong>位标记</strong>(bit flag).按位或运算符用于设置相应的位.<code>CS_HERDRAW</code>和<code>CS_VERDRAW</code>指定了窗口的水平尺寸或垂直尺寸被改变时基于此窗口类的所有窗口都被重新绘制.</p>
+<p><code>lpfnWndProc</code></p>
+<pre><code class="fenced-code-block language-c">wndclass<span class="token punctuation">.</span>lpfnWndProc <span class="token operator">=</span> WndProc<span class="token punctuation">;</span></code></pre>
+<p>将窗口类的窗口过程设为<code>WndProc()</code>函数.此函数处理传递给所有基于该窗口类创建的窗口的所有消息.</p>
+<p><code>cbClsExtra</code>和<code>cbWndExtra</code></p>
+<pre><code class="fenced-code-block language-c">wndclass<span class="token punctuation">.</span>cbClsExtra <span class="token operator">=</span> wndclass<span class="token punctuation">.</span>cbWndExtra <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span></code></pre>
+<p>用于在类结构和Windows内部维护的窗口结构中预留一些额外的空间,应用程序可以根据需要使用这些额外的空间.</p>
+<p><code>hInstance</code></p>
+<pre><code class="fenced-code-block language-c">wndclass<span class="token punctuation">.</span>hInstance <span class="token operator">=</span> hInstance<span class="token punctuation">;</span></code></pre>
+<p>程序的实例句柄.</p>
+<p><code>hIcon</code>和<code>hCursor</code></p>
+<pre><code class="fenced-code-block language-c">wndclass<span class="token punctuation">.</span>hIcon <span class="token operator">=</span> <span class="token function">LoadImage</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">,</span> IDI_APPLICATION<span class="token punctuation">,</span> IMAGE_ICON<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> LR_DEFAULTSIZE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+wndclass<span class="token punctuation">.</span>hCursor <span class="token operator">=</span> <span class="token function">LoadImage</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">,</span> IDC_ARROW<span class="token punctuation">,</span> IMAGE_CURSOR<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> LR_DEFAULTSIZE<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>设置图标和游标.</p>
+<p><code>hbrBackground</code></p>
+<pre><code class="fenced-code-block language-c">wndclass<span class="token punctuation">.</span>hbrBackground <span class="token operator">=</span> <span class="token punctuation">(</span>HBRUSH<span class="token punctuation">)</span><span class="token function">GetStockObject</span><span class="token punctuation">(</span>WHITE_BRUSH<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><code>hbr</code>表示画刷的句柄.窗口客户区的背景颜色.</p>
+<p><code>lpszMenuName</code></p>
+<pre><code class="fenced-code-block language-c">wndclass<span class="token punctuation">.</span>lpszMenuName <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span></code></pre>
+<p>指定窗口类的菜单.</p>
+<p><code>lpszClassName</code></p>
+<pre><code class="fenced-code-block language-c">wndclass<span class="token punctuation">.</span>lpszClassName <span class="token operator">=</span> szAppName<span class="token punctuation">;</span></code></pre>
+<p>窗口类的名称.可以命名为任意名称.</p>
+<p>初始化<code>WNDCLASS</code>结构的10个字段之后,调用<code>RegisterClass()</code>注册窗口类.然后调用<code>CreateWindow()</code>创建窗口.</p>
+<pre><code class="fenced-code-block language-c">hWnd <span class="token operator">=</span> <span class="token function">CreateWindow</span><span class="token punctuation">(</span>
+        szAppName<span class="token punctuation">,</span><span class="token comment">//窗口类名称,窗口通过此名称与窗口类建立关联</span>
+        <span class="token function">TEXT</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token comment">//窗口标题</span>
+        WS_OVERLAPPEDWINDOW<span class="token punctuation">,</span><span class="token comment">//窗口风格</span>
+        CW_USEDEFAULT<span class="token punctuation">,</span><span class="token comment">//窗口左上角初始x坐标(相对于屏幕左上角)</span>
+        CW_USEDEFAULT<span class="token punctuation">,</span><span class="token comment">//窗口左上角初始y坐标(相对于屏幕左上角)</span>
+        CW_USEDEFAULT<span class="token punctuation">,</span><span class="token comment">//窗口的初始x大小(宽度)</span>
+        CW_USEDEFAULT<span class="token punctuation">,</span><span class="token comment">//窗口的初始y大小(高度)</span>
+        <span class="token constant">NULL</span><span class="token punctuation">,</span><span class="token comment">//父窗口句柄</span>
+        <span class="token constant">NULL</span><span class="token punctuation">,</span><span class="token comment">//窗口菜单句柄</span>
+        hInstance<span class="token punctuation">,</span><span class="token comment">//程序实例句柄</span>
+        <span class="token constant">NULL</span><span class="token comment">//创建参数</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//CreateWindow 创建一个窗口(基于窗口类)</span></code></pre>
+<p>此时,Windows已经分配了一块内存来保存<code>CreateWindow()</code>函数调用中指定的窗口信息以及一些其他信息.Windows可通过窗口句柄来获取这些信息.</p>
+<p>接下来,需要调用<code>ShowWindow()</code>函数将窗口显示在屏幕中.该函数的第一个参数是指向刚才<code>CreateWindow()</code>函数创建的窗口的句柄<code>hWnd</code>.第二个参数是<code>WinMain()</code>函数所接收的<code>iCmdShow</code>值.</p>
+<table>
+<thead>
+<tr>
+<th>窗口显示情况</th>
+<th>iCmdShow的值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>最大化</td>
+<td><code>SW_SHOWMAXIMAZED</code></td>
+</tr>
+<tr>
+<td>正常显示</td>
+<td><code>SW_SHOWNORMAL</code></td>
+</tr>
+<tr>
+<td>最小化</td>
+<td><code>SW_SHOWMINNOACTIVE</code></td>
+</tr>
+</tbody></table>
+<p>如果<code>ShowWindow()</code>函数的第二个参数是<code>SW_SHOWNORMAL</code>,则该窗口的客户区将被在窗口类中指定的画刷擦除,在此例中是<code>WHITE_BRUSH</code>.然后<code>UpdateWindow(hWnd)</code>调用向窗口过程(此例中为<code>WndProc()</code>)发送一条<code>WM_PAINT</code>消息使客户区重绘.</p>
+<h5 class="atx" id="消息循环和消息处理">消息循环和消息处理</h5>
+<p>调用<code>UpdateWindow()</code>后,窗口便在屏幕中完全可见了.但是,程序需要能够接收键盘和鼠标输入.每一个Windows应用程序都有一个由Windows维护的消息队列.输入事件发生后,Windows自动将事件转换为消息,并将其放在消息队列中.</p>
+<p>应用程序通过执行一段叫作<strong>消息循环</strong>的代码段从该消息队列中获取消息:</p>
+<pre><code class="fenced-code-block language-c"><span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">GetMessage</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>msg<span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">TranslateMessage</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">DispatchMessage</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>其中<code>msg</code>的类型是<code>MSG</code>.下面是<code>MSG</code>结构的定义(在WinUser.h中):</p>
+<pre><code class="fenced-code-block language-c"><span class="token comment">/*
+ * Message structure
+ */</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">tagMSG</span> <span class="token punctuation">{</span>
+    HWND        hwnd<span class="token punctuation">;</span><span class="token comment">//消息所指向的窗口的句柄</span>
+    UINT        message<span class="token punctuation">;</span><span class="token comment">//消息标识符(一个用于标识消息的数字,对于每条消息都定义了以WM_开头的标识符)</span>
+    WPARAM      wParam<span class="token punctuation">;</span><span class="token comment">//32位的消息参数,含义取决于具体的消息</span>
+    LPARAM      lParam<span class="token punctuation">;</span><span class="token comment">//同上</span>
+    DWORD       time<span class="token punctuation">;</span><span class="token comment">//消息进入消息队列的时间</span>
+    POINT       pt<span class="token punctuation">;</span><span class="token comment">//消息进入消息队列中时鼠标指针的位置坐标</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">ifdef</span> <span class="token expression">_MAC</span></span>
+    DWORD       lPrivate<span class="token punctuation">;</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">endif</span></span>
+<span class="token punctuation">}</span> MSG<span class="token punctuation">,</span> <span class="token operator">*</span>PMSG<span class="token punctuation">,</span> NEAR <span class="token operator">*</span>NPMSG<span class="token punctuation">,</span> FAR <span class="token operator">*</span>LPMSG<span class="token punctuation">;</span></code></pre>
+<p><code>MSG</code>结构中<code>POINT</code>结构的定义如下(在windef.h中):</p>
+<pre><code class="fenced-code-block language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">tagPOINT</span>
+<span class="token punctuation">{</span>
+    LONG  x<span class="token punctuation">;</span>
+    LONG  y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> POINT<span class="token punctuation">,</span> <span class="token operator">*</span>PPOINT<span class="token punctuation">,</span> NEAR <span class="token operator">*</span>NPPOINT<span class="token punctuation">,</span> FAR <span class="token operator">*</span>LPPOINT<span class="token punctuation">;</span></code></pre>
+<p><code>GetMessage()</code>函数用于从消息队列中检索消息:</p>
+<pre><code class="fenced-code-block language-c"><span class="token function">GetMessage</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>msg<span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>第1个参数是一个指向<code>MSG</code>结构的指针,第2,3,4个参数表明该程序希望获取由该程序所创建的所有窗口的消息.消息队列中的下一条消息将被填充到消息结构的各个字段中.</p>
+<p>如果<code>GetMessage()</code>从消息队列中检索到的消息等于<code>WM_QUIT</code>,返回0,否则返回非0值.</p>
+<p><code>TranslateMessage(&amp;msg);</code>将msg结构返还给Windows进行某些键盘消息转换.</p>
+<p><code>DispatchMessage(&amp;msg);</code>分发消息到对应窗口.</p>
+<p>然后,Windows调用合适的窗口过程(此例中为<code>WndProc()</code>),将这条消息发送给其处理.</p>
+<div class="mermaid" data-processed="true"><svg id="mermaid-1722812376631" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="444.0000305175781" style="max-width: 509.1624755859375px;" viewBox="0 0.0000019073486328125 509.1624755859375 444.0000305175781"><style>#mermaid-1722812376631 {font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-1722812376631 .error-icon{fill:#552222;}#mermaid-1722812376631 .error-text{fill:#552222;stroke:#552222;}#mermaid-1722812376631 .edge-thickness-normal{stroke-width:2px;}#mermaid-1722812376631 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1722812376631 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1722812376631 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1722812376631 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1722812376631 .marker{fill:#333333;stroke:#333333;}#mermaid-1722812376631 .marker.cross{stroke:#333333;}#mermaid-1722812376631 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1722812376631 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1722812376631 .cluster-label text{fill:#333;}#mermaid-1722812376631 .cluster-label span{color:#333;}#mermaid-1722812376631 .label text,#mermaid-1722812376631 span{fill:#333;color:#333;}#mermaid-1722812376631 .node rect,#mermaid-1722812376631 .node circle,#mermaid-1722812376631 .node ellipse,#mermaid-1722812376631 .node polygon,#mermaid-1722812376631 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1722812376631 .node .label{text-align:center;}#mermaid-1722812376631 .node.clickable{cursor:pointer;}#mermaid-1722812376631 .arrowheadPath{fill:#333333;}#mermaid-1722812376631 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-1722812376631 .flowchart-link{stroke:#333333;fill:none;}#mermaid-1722812376631 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaid-1722812376631 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaid-1722812376631 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1722812376631 .cluster text{fill:#333;}#mermaid-1722812376631 .cluster span{color:#333;}#mermaid-1722812376631 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1722812376631 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-GetMessage将消息填充进msg结构 LE-TranslateMessage将msg结构返还给Windows系统处理键盘消息" id="L-GetMessage将消息填充进msg结构-TranslateMessage将msg结构返还给Windows系统处理键盘消息" style="opacity: 1;"><path class="path" d="M306.14015924076904,53.599998474121094L294.6303415426005,57.76666514078776C283.12052384443194,61.93333180745443,260.10088844809485,70.26666514078777,248.59107074992633,78.5999984741211C237.0812530517578,86.93333180745442,237.0812530517578,95.26666514078777,237.0812530517578,99.43333180745442L237.0812530517578,103.5999984741211" marker-end="url(#arrowhead86)" style="fill:none"></path><defs><marker id="arrowhead86" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-TranslateMessage将msg结构返还给Windows系统处理键盘消息 LE-DispatchMessage将msg结构再次返回给Windows系统" style="opacity: 1;" id="L-TranslateMessage将msg结构返还给Windows系统处理键盘消息-DispatchMessage将msg结构再次返回给Windows系统"><path class="path" d="M237.0812530517578,149.1999969482422L237.0812530517578,153.36666361490884C237.0812530517578,157.53333028157553,237.0812530517578,165.86666361490884,237.0812530517578,174.1999969482422C237.0812530517578,182.53333028157553,237.0812530517578,190.86666361490884,237.0812530517578,195.03333028157553L237.0812530517578,199.1999969482422" marker-end="url(#arrowhead87)" style="fill:none"></path><defs><marker id="arrowhead87" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-DispatchMessage将msg结构再次返回给Windows系统 LE-Windows系统将消息发送给WndProc" style="opacity: 1;" id="L-DispatchMessage将msg结构再次返回给Windows系统-Windows系统将消息发送给WndProc"><path class="path" d="M237.0812530517578,244.79999542236328L237.0812530517578,248.96666208902994C237.0812530517578,253.13332875569662,237.0812530517578,261.46666208902997,237.0812530517578,269.7999954223633C237.0812530517578,278.1333287556966,237.0812530517578,286.46666208902997,237.0812530517578,290.6333287556966L237.0812530517578,294.7999954223633" marker-end="url(#arrowhead88)" style="fill:none"></path><defs><marker id="arrowhead88" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Windows系统将消息发送给WndProc LE-WndProc处理消息" style="opacity: 1;" id="L-Windows系统将消息发送给WndProc-WndProc处理消息"><path class="path" d="M237.0812530517578,340.3999938964844L237.0812530517578,344.56666056315106C237.0812530517578,348.7333272298177,237.0812530517578,357.06666056315106,248.59107074992633,365.3999938964844C260.10088844809485,373.7333272298177,283.12052384443194,382.06666056315106,294.6303415426005,386.2333272298177L306.14015924076904,390.3999938964844" marker-end="url(#arrowhead89)" style="fill:none"></path><defs><marker id="arrowhead89" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-WndProc处理消息 LE-GetMessage将消息填充进msg结构" style="opacity: 1;" id="L-WndProc处理消息-GetMessage将消息填充进msg结构"><path class="path" d="M432.1035999145044,390.3999938964844L443.61341761267295,386.2333272298177C455.1232353108415,382.06666056315106,478.1428707071786,373.7333272298177,489.6526884053471,361.59999402364093C501.1625061035156,349.4666608174642,501.1625061035156,333.53332773844403,501.1625061035156,317.5999946594238C501.1625061035156,301.6666615804036,501.1625061035156,285.7333285013835,501.1625061035156,269.7999954223633C501.1625061035156,253.8666623433431,501.1625061035156,237.9333292643229,501.1625061035156,221.99999618530273C501.1625061035156,206.06666310628256,501.1625061035156,190.13333002726236,501.1625061035156,174.1999969482422C501.1625061035156,158.26666386922201,501.1625061035156,142.3333307902018,501.1625061035156,126.39999771118164C501.1625061035156,110.46666463216145,501.1625061035156,94.53333155314128,489.6526884053471,82.39999834696452C478.1428707071786,70.26666514078777,455.1232353108415,61.93333180745443,443.61341761267295,57.76666514078776L432.1035999145044,53.599998474121094" marker-end="url(#arrowhead90)" style="fill:none"></path><defs><marker id="arrowhead90" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-GetMessage将消息填充进msg结构-TranslateMessage将msg结构返还给Windows系统处理键盘消息" class="edgeLabel L-LS-GetMessage将消息填充进msg结构' L-LE-TranslateMessage将msg结构返还给Windows系统处理键盘消息"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-TranslateMessage将msg结构返还给Windows系统处理键盘消息-DispatchMessage将msg结构再次返回给Windows系统" class="edgeLabel L-LS-TranslateMessage将msg结构返还给Windows系统处理键盘消息' L-LE-DispatchMessage将msg结构再次返回给Windows系统"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-DispatchMessage将msg结构再次返回给Windows系统-Windows系统将消息发送给WndProc" class="edgeLabel L-LS-DispatchMessage将msg结构再次返回给Windows系统' L-LE-Windows系统将消息发送给WndProc"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Windows系统将消息发送给WndProc-WndProc处理消息" class="edgeLabel L-LS-Windows系统将消息发送给WndProc' L-LE-WndProc处理消息"></span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform=""><g transform="translate(0,0)" class="label"><rect rx="0" ry="0" width="0" height="0"></rect><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-WndProc处理消息-GetMessage将消息填充进msg结构" class="edgeLabel L-LS-WndProc处理消息' L-LE-GetMessage将消息填充进msg结构"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-GetMessage将消息填充进msg结构-36" transform="translate(369.1218795776367,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-129.9375" y="-22.800000190734863" width="259.875" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-119.9375,-12.800000190734863)"><foreignObject width="239.875" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">GetMessage将消息填充进msg结构</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-TranslateMessage将msg结构返还给Windows系统处理键盘消息-37" transform="translate(237.0812530517578,126.39999771118164)"><rect rx="0" ry="0" x="-229.0812530517578" y="-22.800000190734863" width="458.1625061035156" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-219.0812530517578,-12.800000190734863)"><foreignObject width="438.1625061035156" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">TranslateMessage将msg结构返还给Windows系统处理键盘消息</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-DispatchMessage将msg结构再次返回给Windows系统-38" transform="translate(237.0812530517578,221.99999618530273)"><rect rx="0" ry="0" x="-194.8874969482422" y="-22.800000190734863" width="389.7749938964844" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-184.8874969482422,-12.800000190734863)"><foreignObject width="369.7749938964844" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">DispatchMessage将msg结构再次返回给Windows系统</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-Windows系统将消息发送给WndProc-39" transform="translate(237.0812530517578,317.5999946594238)"><rect rx="0" ry="0" x="-136.4000015258789" y="-22.800000190734863" width="272.8000030517578" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-126.4000015258789,-12.800000190734863)"><foreignObject width="252.8000030517578" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Windows系统将消息发送给WndProc</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-WndProc处理消息-40" transform="translate(369.1218795776367,413.1999931335449)"><rect rx="0" ry="0" x="-73.09375" y="-22.800000190734863" width="146.1875" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-63.09375,-12.800000190734863)"><foreignObject width="126.1875" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">WndProc处理消息</div></foreignObject></g></g></g></g></g></g></svg></div>
+<p>窗口过程总是定义为如下形式:</p>
+<pre><code class="fenced-code-block language-c">LRASULT CALLBACK <span class="token function">WndProc</span><span class="token punctuation">(</span>HWND hwnd<span class="token punctuation">,</span>UINT message<span class="token punctuation">,</span>WPARAM wParam<span class="token punctuation">,</span>LPARAM lParam<span class="token punctuation">)</span></code></pre>
+<p>窗口过程的4个参数与<code>MSG</code>结构的前4个字段一一对应.</p>
+<p>窗口过程总是由Windows自身调用.应用程序如果想要调用自身的窗口过程,则可使用函数<code>SendMessage()</code>.</p>
+<p>通常在窗口过程中使用switch-case结构确定窗口过程收到的消息类型和相应的处理方法.winuser.h中为各种类型的消息定义了以<code>WM_</code>为前缀的标识符.当窗口过程对消息进行处理后,应返回0.窗口过程不处理的消息都必须传给<code>DefWindowProc()</code>.此函数的返回值必须从窗口过程返回.</p>
+<p><strong>WM_CREATE</strong></p>
+<p><code>WM_CREATE</code>消息是一个窗口过程接收到的第一条消息.当<code>WinMain()</code>调用<code>CreateWindow()</code>时,Windows完成其必须的操作,在此过程中Windows对<code>WndProc()</code>进行调用,并将其第一个参数设为该窗口的句柄,将第二个参数设为<code>WM_CREATE</code>.然后<code>WndProc()</code>对<code>WM_CREATE</code>消息进行处理,并将控制权返还给Windows.再然后Windows从<code>CreateWindow()</code>调用返回到<code>WinMain()</code>中.</p>
+<div class="mermaid" data-processed="true"><svg id="mermaid-1722812376709" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="61.599998474121094" style="max-width: 630.7125244140625px;" viewBox="0 0.0000019073486328125 630.7125244140625 61.599998474121094"><style>#mermaid-1722812376709 {font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-1722812376709 .error-icon{fill:#552222;}#mermaid-1722812376709 .error-text{fill:#552222;stroke:#552222;}#mermaid-1722812376709 .edge-thickness-normal{stroke-width:2px;}#mermaid-1722812376709 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1722812376709 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1722812376709 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1722812376709 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1722812376709 .marker{fill:#333333;stroke:#333333;}#mermaid-1722812376709 .marker.cross{stroke:#333333;}#mermaid-1722812376709 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1722812376709 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1722812376709 .cluster-label text{fill:#333;}#mermaid-1722812376709 .cluster-label span{color:#333;}#mermaid-1722812376709 .label text,#mermaid-1722812376709 span{fill:#333;color:#333;}#mermaid-1722812376709 .node rect,#mermaid-1722812376709 .node circle,#mermaid-1722812376709 .node ellipse,#mermaid-1722812376709 .node polygon,#mermaid-1722812376709 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1722812376709 .node .label{text-align:center;}#mermaid-1722812376709 .node.clickable{cursor:pointer;}#mermaid-1722812376709 .arrowheadPath{fill:#333333;}#mermaid-1722812376709 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-1722812376709 .flowchart-link{stroke:#333333;fill:none;}#mermaid-1722812376709 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaid-1722812376709 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaid-1722812376709 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1722812376709 .cluster text{fill:#333;}#mermaid-1722812376709 .cluster span{color:#333;}#mermaid-1722812376709 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1722812376709 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath LS-WinMain LE-CreateWindow" id="L-WinMain-CreateWindow" style="opacity: 1;"><path class="path" d="M87.7874984741211,30.799999237060547L94.62083180745442,30.799999237060547C101.45416514078777,30.799999237060547,115.12083180745442,30.799999237060547,128.7874984741211,30.799999237060547C142.45416514078775,30.799999237060547,156.12083180745444,30.799999237060547,162.95416514078775,30.799999237060547L169.7874984741211,30.799999237060547" marker-end="url(#arrowhead110)" style="fill:none"></path><defs><marker id="arrowhead110" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-CreateWindow LE-Windows" style="opacity: 1;" id="L-CreateWindow-Windows"><path class="path" d="M293.9124984741211,30.799999237060547L300.7458318074544,30.799999237060547C307.5791651407878,30.799999237060547,321.2458318074544,30.799999237060547,334.9124984741211,30.799999237060547C348.5791651407878,30.799999237060547,362.2458318074544,30.799999237060547,369.0791651407878,30.799999237060547L375.9124984741211,30.799999237060547" marker-end="url(#arrowhead111)" style="fill:none"></path><defs><marker id="arrowhead111" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath LS-Windows LE-WndProc" style="opacity: 1;" id="L-Windows-WndProc"><path class="path" d="M458.5250015258789,30.799999237060547L465.3583348592122,30.799999237060547C472.1916681925456,30.799999237060547,485.8583348592122,30.799999237060547,499.5250015258789,30.799999237060547C513.1916681925455,30.799999237060547,526.8583348592123,30.799999237060547,533.6916681925455,30.799999237060547L540.5250015258789,30.799999237060547" marker-end="url(#arrowhead112)" style="fill:none"></path><defs><marker id="arrowhead112" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" style="opacity: 1;" transform="translate(128.7874984741211,30.799999237060547)"><g transform="translate(-16,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="32" height="25.600000381469727"></rect><foreignObject width="32" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-WinMain-CreateWindow" class="edgeLabel L-LS-WinMain' L-LE-CreateWindow">调用</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(334.9124984741211,30.799999237060547)"><g transform="translate(-16,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="32" height="25.600000381469727"></rect><foreignObject width="32" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-CreateWindow-Windows" class="edgeLabel L-LS-CreateWindow' L-LE-Windows">调用</span></div></foreignObject></g></g><g class="edgeLabel" style="opacity: 1;" transform="translate(499.5250015258789,30.799999237060547)"><g transform="translate(-16,-12.800000190734863)" class="label"><rect rx="0" ry="0" width="32" height="25.600000381469727"></rect><foreignObject width="32" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span id="L-L-Windows-WndProc" class="edgeLabel L-LS-Windows' L-LE-WndProc">调用</span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-WinMain-46" transform="translate(47.89374923706055,30.799999237060547)" style="opacity: 1;"><rect rx="0" ry="0" x="-39.89375114440918" y="-22.800000190734863" width="79.78750228881836" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-29.89375114440918,-12.800000190734863)"><foreignObject width="59.78750228881836" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">WinMain</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-CreateWindow-47" transform="translate(231.8499984741211,30.799999237060547)"><rect rx="0" ry="0" x="-62.0625" y="-22.800000190734863" width="124.125" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-52.0625,-12.800000190734863)"><foreignObject width="104.125" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">CreateWindow</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-Windows-48" transform="translate(417.21875,30.799999237060547)"><rect rx="0" ry="0" x="-41.30624961853027" y="-22.800000190734863" width="82.61249923706055" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-31.306249618530273,-12.800000190734863)"><foreignObject width="62.61249923706055" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">Windows</div></foreignObject></g></g></g><g class="node default" style="opacity: 1;" id="flowchart-WndProc-49" transform="translate(581.6187515258789,30.799999237060547)"><rect rx="0" ry="0" x="-41.09375" y="-22.800000190734863" width="82.1875" height="45.60000038146973" class="label-container"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-31.09375,-12.800000190734863)"><foreignObject width="62.1875" height="25.600000381469727"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">WndProc</div></foreignObject></g></g></g></g></g></g></svg></div>
+<p>此程序中,通过调用<code>PlaySound()</code>函数播放一个.wav(波形声音)文件作为对该消息的处理.<code>PlaySound()</code>函数的第一个参数是波形文件的名称,也可以是控制面板的声音控制区定义的声音别名或应用程序资源.第二个参数只有当声音文件是一个资源时才有用.第三个参数指定了一组选项.该程序中第一个参数为文件名且该段声音是以异步方式播放的(当指定的声音文件开始播放时<code>PlaySound()</code>函数立即返回,无需等待该文件播放结束).</p>
+</article>
+</body>
+</html>
