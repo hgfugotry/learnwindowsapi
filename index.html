@@ -3,13 +3,68 @@
 <head>
 	<meta charset="utf-8">
 	<title>Learn Windows API</title>
+	<style>
+		#menu{
+			border:3px solid #e741e7;
+			border-radius:15px;
+			background:rgb(185, 235, 255);
+			width:30%;
+			height:1000px;
+		}
+		.choice{
+			font-size:15px;
+			font-family:'Times New Roman', Times, serif;
+    		padding:1em;
+    		list-style:none;
+		}
+		.title
+		{
+			display:flex;
+			justify-content: center;
+			font-size:150%;
+			border-radius: 125px;
+  			background: #FFDDEE;
+  			padding: 5px; 
+  			width: 100%;
+  			height: auto;
+		}
+		a{
+			text-decoration:none;
+		}
+		#imgbd {
+			border:3px solid chartreuse;
+			border-radius: 0px;
+			background: rgb(185, 235, 255);
+			width: auto;
+			height: auto;
+		}
+		#hello{
+			border-radius: 10000px;
+			background: rgb(255, 255, 255);
+			width: auto;
+			height: auto;
+		}
+	</style>
 </head>
-<body style="background-color:rgb(255,255,255)">
-	<h1>Learn Windows API</h1>
-	<div style="display:flex;flex-direction:column;background-color:rgb(255,231,255);width:10%">
-		<a href="learn/1.html">1 学习Windows API--从一个HelloWorld程序开始</a>
-		<a href="learn/2.html">2 字符串</a>
-		<a href="learn/3.html">3 窗口和消息</a>
+<body style="background-color:rgb(255,255,255);font-family:Gabriola">
+	<div class="title" style="background:#fec6f9"><div style="width:90%" class="title"><h1 style="text-align:center;color:#757575" class="title">Learn Windows API</h1></div></div>
+	<hr />
+	<div style="background: #EECCFF; width: 100%; height: 1000px;border-radius:50000px">
+		<div id="menu" style="float:left">
+			<ol style="font-family:'Courier New', Courier, monospace">
+				<li><a href="learn/1/1.html" class="choice">1</a></li>
+				<li><a href="learn/2.html" class="choice">2</a></li>
+				<li><a href="learn/3.html" class="choice">3</a></li>
+			</ol>
+		</div>
+		<div id="hello" style="float:left;width:39%; background:white; color:green">
+			<div style="display:flex;justify-content:center;align-items:center;text-align:center">
+				<p style="font-family:Gabriola;font-size:700%">Hello<br/ >Windows API<br />World</p>
+			</div>
+		</div>
+		<div style="float:right;width:30%">
+			<img src="img/23.jpg" id="imgbd" style="float:right;width:90%" />
+		</div>
 	</div>
 </body>
 </html>
