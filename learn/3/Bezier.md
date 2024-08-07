@@ -1,12 +1,10 @@
+# Bezier.cpp
+
 ```cpp
 #include<windows.h>
-#include<cstdio>
-#include<CMATH>
-//sin.cpp
-//LiuLiYuan 2024.8.7
-#define NUM INT_MAX-30000
-#define POINTNUM 1000
-#define TWOPI (2*3.14159)
+//Bezier.cpp
+//hgfugotry 2024.8.7
+#define POINTNUM 4
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);//CALLBACK被定义为__stdcall
 
@@ -30,12 +28,12 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLi
     //创建窗口
     HWND            hWnd;
     hWnd = CreateWindow(
-        szAppName,TEXT("Hello World"),
+        szAppName, TEXT("Bezier"),
         WS_OVERLAPPEDWINDOW,
-        CW_USEDEFAULT,CW_USEDEFAULT,
-        CW_USEDEFAULT,CW_USEDEFAULT,
-        NULL,NULL,
-        hInstance,NULL);
+        CW_USEDEFAULT, CW_USEDEFAULT,
+        CW_USEDEFAULT, CW_USEDEFAULT,
+        NULL, NULL,
+        hInstance, NULL);
 
     //绘制窗口
     ShowWindow(hWnd, iCmdShow);
@@ -52,14 +50,28 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLi
     return msg.wParam;
 }
 
+void DrawBezier(HDC hdc, POINT apt[])
+{
+    //绘制贝塞尔曲线
+    PolyBezier(hdc, apt, 4);
+
+    //绘制端点与控制点的连线
+    MoveToEx(hdc, apt[0].x, apt[0].y, NULL);
+    LineTo(hdc, apt[1].x, apt[1].y);
+    MoveToEx(hdc, apt[2].x, apt[2].y, NULL);
+    LineTo(hdc, apt[3].x, apt[3].y);
+    MoveToEx(hdc, apt[3].x, apt[3].y, NULL);
+    LineTo(hdc, apt[1].x, apt[1].y);
+    MoveToEx(hdc, apt[2].x, apt[2].y, NULL);
+    LineTo(hdc, apt[0].x, apt[0].y);
+}
+
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     HDC hdc;
     PAINTSTRUCT ps;
     static int cxClient, cyClient;
-    int i;
-    POINT apt[POINTNUM];
-    TCHAR szBuffer[32]=TEXT("Hello World!");
+    static POINT apt[POINTNUM];
 
     switch (message)
     {
@@ -69,36 +81,51 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         cxClient = LOWORD(lParam);
         cyClient = HIWORD(lParam);
 
+        //重设贝塞尔曲线端点位置
+        apt[0] = { cxClient / 4,cyClient / 2 };
+        apt[3] = { 3 * cxClient / 4,cyClient / 2 };
+        //重设贝塞尔曲线控制点位置
+        apt[1] = { cxClient / 2,cyClient / 4 };
+        apt[2] = { cxClient / 2, 3 * cyClient / 4 };
+
         return 0;
-    case WM_PAINT:
-        hdc = BeginPaint(hWnd, &ps);//BeginPaint 标明窗口绘制开始
 
-        //绘制x轴,y轴
-        MoveToEx(hdc, 0, cyClient / 2, NULL);
-        LineTo(hdc, cxClient, cyClient / 2);
-        MoveToEx(hdc, cxClient / 2, 0, NULL);
-        LineTo(hdc, cxClient / 2, cyClient);
-        TextOut(hdc, cxClient / 1.01, cyClient / 2, TEXT("x"), 1);
-        TextOut(hdc, cxClient / 2, 0, TEXT("y"), 1);
-
-        //在左上角绘制"Hello World!"
-        TextOut(hdc, 0, 0, szBuffer, lstrlen(szBuffer));
-
-        //绘制正弦曲线
-        for (i = 0; i < POINTNUM; i++)
+    case WM_LBUTTONDOWN:
+    case WM_RBUTTONDOWN:
+    case WM_MOUSEMOVE:
+        if (wParam & MK_LBUTTON || wParam & MK_RBUTTON)
         {
-            apt[i].x = i * cxClient / POINTNUM;
-            apt[i].y = (int)(cyClient / 2 * (1 - sin(TWOPI * i / POINTNUM)));
-        }
-        Polyline(hdc, apt, POINTNUM);
+            hdc = GetDC(hWnd);
 
-        EndPaint(hWnd, &ps);//EndPaint 结束窗口绘制
+            //清理上次绘制的轨迹
+            SelectObject(hdc, GetStockObject(WHITE_PEN));
+            DrawBezier(hdc, apt);
+
+            //选择改变的控制点
+            if (wParam & MK_LBUTTON)
+                apt[1] = { LOWORD(lParam),HIWORD(lParam) };
+            if (wParam & MK_RBUTTON)
+                apt[2] = { LOWORD(lParam),HIWORD(lParam) };
+
+            //绘制新曲线和端点与控制点的连线
+            SelectObject(hdc, GetStockObject(BLACK_PEN));
+            DrawBezier(hdc, apt);
+
+            ReleaseDC(hWnd, hdc);
+        }
         return 0;
+
+    case WM_PAINT:
+        hdc = BeginPaint(hWnd, &ps);
+        DrawBezier(hdc, apt);
+        EndPaint(hWnd, &ps);
+        return 0;
+
     case WM_DESTROY:
-        PostQuitMessage(0);//PostQuitMessage 将退出消息插入消息队列
+        PostQuitMessage(0);
         return 0;
     }
-    return DefWindowProc(hWnd, message, wParam, lParam);//DefWindowProc 执行默认的消息处理
+    return DefWindowProc(hWnd, message, wParam, lParam);
 }
 
 //常量标识符前缀
@@ -126,3 +153,5 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     //HCURSOR        游标句柄
     //HBRUSH        图形画刷句柄
 ```
+
+2024.8.7
